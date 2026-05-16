@@ -39,25 +39,25 @@ function IconBackdrop() {
     <Svg width={370} height={292} viewBox="0 0 260 210">
       <Defs>
         <LinearGradient id="purplePink" x1="0" y1="0" x2="1" y2="1">
-          <Stop offset="0" stopColor="#743df4" />
-          <Stop offset="1" stopColor="#ff63b5" />
+          <Stop offset="0" stopColor="#b9a8f6" />
+          <Stop offset="1" stopColor="#f2b6d4" />
         </LinearGradient>
         <LinearGradient id="yellowOrange" x1="0" y1="0" x2="1" y2="1">
-          <Stop offset="0" stopColor="#ffe857" />
-          <Stop offset="1" stopColor="#ff8a32" />
+          <Stop offset="0" stopColor="#f6dea1" />
+          <Stop offset="1" stopColor="#efbd91" />
         </LinearGradient>
         <LinearGradient id="pinkOrange" x1="0" y1="0" x2="1" y2="1">
-          <Stop offset="0" stopColor="#ff65ca" />
-          <Stop offset="1" stopColor="#ff8c46" />
+          <Stop offset="0" stopColor="#efb1d4" />
+          <Stop offset="1" stopColor="#edc2a8" />
         </LinearGradient>
       </Defs>
 
       <Circle cx="88" cy="82" r="64" fill="url(#purplePink)" opacity="0.9" />
       <Circle cx="165" cy="76" r="58" fill="url(#yellowOrange)" opacity="0.9" />
       <Circle cx="152" cy="153" r="52" fill="url(#pinkOrange)" opacity="0.78" />
-      <Circle cx="213" cy="112" r="18" fill="#3fc9f5" />
-      <Circle cx="193" cy="157" r="8" fill="#ffdc45" />
-      <Circle cx="124" cy="24" r="16" fill="#f95bb7" opacity="0.66" />
+      <Circle cx="213" cy="112" r="18" fill="#9fd7e9" opacity="0.8" />
+      <Circle cx="193" cy="157" r="8" fill="#ead486" opacity="0.8" />
+      <Circle cx="124" cy="24" r="16" fill="#e9a5c9" opacity="0.58" />
     </Svg>
   );
 }
@@ -72,10 +72,10 @@ function ScreenBackground() {
     >
       <Defs>
         <LinearGradient id="screenBase" x1="0" y1="0" x2="1" y2="1">
-          <Stop offset="0" stopColor="#8743f4" />
-          <Stop offset="0.32" stopColor="#ec4fb8" />
-          <Stop offset="0.58" stopColor="#ff9b35" />
-          <Stop offset="0.78" stopColor="#fff2d9" />
+          <Stop offset="0" stopColor="#c7b9f4" />
+          <Stop offset="0.3" stopColor="#f2b8d2" />
+          <Stop offset="0.56" stopColor="#f1c49f" />
+          <Stop offset="0.78" stopColor="#f7efe4" />
           <Stop offset="1" stopColor="#ffffff" />
         </LinearGradient>
         <RadialGradient id="centerMilk" cx="50%" cy="53%" r="62%">
@@ -89,12 +89,12 @@ function ScreenBackground() {
           <Stop offset="1" stopColor="#ffffff" stopOpacity="0" />
         </RadialGradient>
         <RadialGradient id="leftSoft" cx="0%" cy="20%" r="65%">
-          <Stop offset="0" stopColor="#7b42f4" stopOpacity="0.64" />
-          <Stop offset="1" stopColor="#7b42f4" stopOpacity="0" />
+          <Stop offset="0" stopColor="#b9a8f6" stopOpacity="0.48" />
+          <Stop offset="1" stopColor="#b9a8f6" stopOpacity="0" />
         </RadialGradient>
         <RadialGradient id="rightSoft" cx="100%" cy="22%" r="70%">
-          <Stop offset="0" stopColor="#ffd238" stopOpacity="0.72" />
-          <Stop offset="1" stopColor="#ffd238" stopOpacity="0" />
+          <Stop offset="0" stopColor="#efd79b" stopOpacity="0.5" />
+          <Stop offset="1" stopColor="#efd79b" stopOpacity="0" />
         </RadialGradient>
       </Defs>
       <Rect width="390" height="844" fill="url(#screenBase)" />
@@ -216,16 +216,23 @@ export default function Login() {
               </View>
 
               <Pressable
+                onPress={() => Alert.alert('Recuperar senha', 'Abra sua tela de recuperacao de senha aqui.')}
+                style={styles.forgotPasswordButton}
+              >
+                <Text style={styles.forgotPasswordText}>Esqueci a senha</Text>
+              </Pressable>
+
+              <Pressable
                 onPress={handleLogin}
                 style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
               >
                 <Svg style={StyleSheet.absoluteFill} viewBox="0 0 300 56" preserveAspectRatio="none">
                   <Defs>
                     <LinearGradient id="buttonGradient" x1="0" y1="0" x2="1" y2="0">
-                      <Stop offset="0" stopColor="#8142f4" />
-                      <Stop offset="0.45" stopColor="#f349b2" />
-                      <Stop offset="0.72" stopColor="#ff6b55" />
-                      <Stop offset="1" stopColor="#ffc21d" />
+                      <Stop offset="0" stopColor="#9e8fee" />
+                      <Stop offset="0.45" stopColor="#df95c1" />
+                      <Stop offset="0.72" stopColor="#e9aa91" />
+                      <Stop offset="1" stopColor="#e8c96d" />
                     </LinearGradient>
                   </Defs>
                   <Rect width="300" height="56" rx="9" fill="url(#buttonGradient)" />
@@ -257,7 +264,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 30,
     paddingBottom: 36,
-    paddingTop: 18,
+    paddingTop: 0,
   },
   hero: {
     alignItems: 'center',
@@ -266,7 +273,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 320,
     justifyContent: 'center',
-    marginTop: 8,
+    marginTop: 14,
     width: 370,
   },
   iconWrap: {
@@ -306,7 +313,7 @@ const styles = StyleSheet.create({
       android: 'sans-serif',
       default: 'sans-serif',
     }),
-    fontSize: 28,
+    fontSize: 23,
     fontWeight: '800',
     letterSpacing: 0,
     marginBottom: 22,
@@ -340,6 +347,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: -6,
     width: 44,
+  },
+  forgotPasswordButton: {
+    alignSelf: 'center',
+    alignItems: 'flex-end',
+    marginTop: -6,
+    marginBottom: 20,
+    maxWidth: 300,
+    width: '100%',
+  },
+  forgotPasswordText: {
+    color: '#2364d2',
+    fontSize: 15,
+    fontWeight: '700',
+    letterSpacing: 0,
   },
   button: {
     alignItems: 'center',

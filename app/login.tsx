@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'expo-router';
 import {
   Alert,
   Image,
@@ -143,6 +144,7 @@ function FieldIcon({ type }: { type: 'email' | 'lock' | 'eye' | 'eyeOff' }) {
 }
 
 export default function Login() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secure, setSecure] = useState(true);
@@ -153,7 +155,7 @@ export default function Login() {
       return;
     }
 
-    Alert.alert('Login', 'Pronto! Agora e so ligar isso a sua autenticacao.');
+    router.replace('/inicial');
   }
 
   return (
@@ -288,7 +290,7 @@ const styles = StyleSheet.create({
     width: 430,
   },
   appTitle: {
-    color: '#17105a',
+    color: '#3f315f',
     fontFamily: Platform.select({
       ios: 'AvenirNext-DemiBold',
       android: 'sans-serif',
@@ -307,7 +309,7 @@ const styles = StyleSheet.create({
   },
   loginTitle: {
     alignSelf: 'center',
-    color: '#17105a',
+    color: '#3f315f',
     fontFamily: Platform.select({
       ios: 'AvenirNext-DemiBold',
       android: 'sans-serif',
@@ -334,7 +336,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   input: {
-    color: '#171b31',
+    color: '#403456',
     flex: 1,
     fontSize: 17,
     letterSpacing: 0,
@@ -357,7 +359,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   forgotPasswordText: {
-    color: '#2364d2',
+    color: '#7297df',
     fontSize: 15,
     fontWeight: '700',
     letterSpacing: 0,
